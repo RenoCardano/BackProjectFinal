@@ -20,6 +20,7 @@ public class Jour {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idJour;
 
+    @NonNull
     @Enumerated(EnumType.STRING)
     private JoursSemaine jour;
 

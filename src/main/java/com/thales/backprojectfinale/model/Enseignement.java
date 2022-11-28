@@ -18,24 +18,16 @@ public class Enseignement {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idEnseignement;
-    @OneToOne
+    @NonNull
+    @OneToOne(cascade = CascadeType. MERGE)
     private Enseignant enseignant;
-    @OneToOne
-    private Matiere matiereEnseigner;
+    @NonNull
+    @OneToOne(cascade = CascadeType. MERGE)
+    private Matiere matiereEnseignee;
 
 
-    @OneToMany(mappedBy = "enseignements")
+    @OneToMany(mappedBy = "enseignement")
     private List<Cours> coursList = new ArrayList<>();
-
-
-    /*
-    @ManyToMany
-    @JoinTable( name="EMP_PROJ",
-            joinColumns = @JoinColumn(name="idEns"),
-            inverseJoinColumns = @JoinColumn(name="codeMat"))
-    private List<Matiere> matièreEnseignant = new ArrayList<Matiere>();
-
-     */
 
 }
 

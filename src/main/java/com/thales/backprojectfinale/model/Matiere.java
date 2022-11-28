@@ -28,12 +28,7 @@ public class Matiere {
     @NonNull
     private String nom;
 
-/*
-    @ManyToMany(mappedBy = "matièreEnseignant")
-    private List<Enseignant> enseignantMatières = new ArrayList<>();
-    */
-
-    @OneToOne(mappedBy = "matiereEnseigner")
+    @OneToOne(mappedBy = "matiereEnseignee", cascade = CascadeType. MERGE)
     private Enseignement enseignement;
 
 

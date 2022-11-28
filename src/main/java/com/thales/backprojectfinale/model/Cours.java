@@ -28,22 +28,18 @@ public class Cours {
     @NonNull
     private String heure_fin;
 
-    @ManyToOne(targetEntity = Classe.class)
+    @NonNull
+    @ManyToOne(cascade = CascadeType. MERGE)
     private Classe classe;
 
-    /*
-    @ManyToOne
-    private Enseignant enseignant;
-
-    @ManyToOne
-    private Matiere matiere;
-    */
-    @ManyToOne
-    private Enseignement enseignements;
-    @ManyToOne
+    @NonNull
+    @ManyToOne(cascade = CascadeType. MERGE)
+    private Enseignement enseignement;
+    @NonNull
+    @ManyToOne(cascade = CascadeType. MERGE)
     private SalleClasse salleClasse;
-
-    @ManyToOne
+    @NonNull
+    @ManyToOne(cascade = CascadeType. MERGE)
     private Jour jourCours;
 
 }

@@ -19,7 +19,8 @@ public class Classe {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idClasse;
     @NonNull
-    private String proffeseurPrincipal;
+    @ManyToOne(cascade = CascadeType. MERGE)
+    private Enseignant professeurPrincipal;
 
     @OneToMany(mappedBy = "classe", targetEntity = Cours.class)
     private List<Cours> coursList = new ArrayList<>();

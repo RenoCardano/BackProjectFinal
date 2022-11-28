@@ -26,7 +26,7 @@ public class Enseignant {
     @NonNull
     private LocalDate dateDeNaissance;
 
-    @OneToOne(mappedBy = "enseignant")
+    @OneToOne(mappedBy = "enseignant", cascade = CascadeType. MERGE)
     private Enseignement enseignement;
 
 

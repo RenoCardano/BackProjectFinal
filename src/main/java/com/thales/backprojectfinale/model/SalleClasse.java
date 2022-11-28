@@ -25,17 +25,16 @@ public class SalleClasse {
     @NonNull
     private int capacite;
 
-
     @OneToMany(mappedBy="codeMat")
     private List<Matiere> matiereExclues;
 
     @OneToMany(mappedBy = "salleClasse" )
     private List<Cours> coursListSalle = new ArrayList<Cours>();
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType. MERGE)
     private Etablissement etablissement;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType. MERGE)
     private Matiere matiereExcluClasse;
 
 

@@ -13,34 +13,30 @@ import java.util.List;
 @Entity
 @Data
 @NoArgsConstructor
-@RequiredArgsConstructor
-public class Enseignant {
+public class Enseignement {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idEns;
-
-    @NonNull
-    private String nom;
-
-    @NonNull
-    private LocalDate dateDeNaissance;
-
-    @OneToOne(mappedBy = "enseignant")
-    private Enseignement enseignement;
+    private int idEnseignement;
+    @OneToOne
+    private Enseignant enseignant;
+    @OneToOne
+    private Matiere matiereEnseigner;
 
 
-    /*
-    @OneToMany(mappedBy = "enseignant")
+    @OneToMany(mappedBy = "enseignements")
     private List<Cours> coursList = new ArrayList<>();
 
 
+    /*
     @ManyToMany
     @JoinTable( name="EMP_PROJ",
             joinColumns = @JoinColumn(name="idEns"),
             inverseJoinColumns = @JoinColumn(name="codeMat"))
     private List<Matiere> matièreEnseignant = new ArrayList<Matiere>();
- */
+
+     */
+
 }
 
 

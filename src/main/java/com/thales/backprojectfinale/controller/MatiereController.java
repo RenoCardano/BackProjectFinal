@@ -24,18 +24,18 @@ public class MatiereController {
 
 
 	@PutMapping({"{id}","{id}/"})
-	public void updateMatiere(@RequestBody Matiere Matiere, @PathVariable String codeMat) {
+	public void updateMatiere(@RequestBody Matiere Matiere, @PathVariable Integer codeMat) {
 		Matiere matiere = dao.findById(codeMat).get();
 		dao.save(matiere);
 	}
 
 	@GetMapping({"{id}", "{id}/" })
-	public Matiere GetMatiereById(@PathVariable String codeMat) {
+	public Matiere GetMatiereById(@PathVariable Integer codeMat) {
 		return dao.findById(codeMat).get();
 	}
 
 	@DeleteMapping("/delete/{code}")
-	public void delMatiere(@PathVariable String codeMat) {
+	public void delMatiere(@PathVariable Integer codeMat) {
 		dao.deleteById(codeMat);
 	}
 

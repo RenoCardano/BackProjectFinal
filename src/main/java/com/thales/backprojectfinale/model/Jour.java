@@ -23,7 +23,7 @@ public class Jour {
     @Enumerated(EnumType.STRING)
     private JoursSemaine jour;
 
-    @OneToMany(mappedBy = "jour")
+    @OneToMany(mappedBy = "jourCours", targetEntity = Cours.class)
     private List<Cours> coursJourList = new ArrayList<Cours>();
 
 }

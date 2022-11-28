@@ -32,5 +32,11 @@ public class SalleClasse {
     @OneToMany(mappedBy = "salleClasse" )
     private List<Cours> coursListSalle = new ArrayList<Cours>();
 
+    @ManyToOne
+    private Etablissement etablissement;
+
+    @ManyToOne
+    private Matiere matiereExcluClasse;
+
 
 }

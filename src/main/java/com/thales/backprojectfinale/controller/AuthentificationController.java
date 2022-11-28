@@ -1,10 +1,9 @@
 package com.thales.backprojectfinale.controller;
 
 import com.thales.backprojectfinale.dao.IAuthentificationDao;
-import com.thales.backprojectfinale.dao.IEtablissementDao;
-import com.thales.backprojectfinale.model.Etablissement;
+
 import com.thales.backprojectfinale.model.Utilisateur;
-import org.apache.tomcat.util.net.openssl.ciphers.Authentication;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,7 +11,7 @@ import java.util.List;
 
 
 @RestController
-@RequestMapping("/authentification")
+@RequestMapping("/users")
 public class AuthentificationController {
 
 	@Autowired
@@ -44,8 +43,9 @@ public class AuthentificationController {
 		}
 	}
 
-	@GetMapping({"", "/"})
+	@GetMapping({""})
 	public List<Utilisateur> getAllUtilisateur() {
+
 		return this.dao.findAll();
 	}
 

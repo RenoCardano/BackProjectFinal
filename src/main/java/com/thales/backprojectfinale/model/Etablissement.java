@@ -25,10 +25,15 @@ public class Etablissement {
     @NonNull
     private String type;
     @NonNull
-    private int numeroTelephone;
+    private String numeroTelephone;
     @NonNull
     private String logo;
 
     @OneToMany(mappedBy = "etablissement")
     private List<Utilisateur> authentificationList = new ArrayList<>();
+
+    @OneToMany(mappedBy = "etablissement")
+    private List<SalleClasse> salles = new ArrayList<>();
+
+
 }

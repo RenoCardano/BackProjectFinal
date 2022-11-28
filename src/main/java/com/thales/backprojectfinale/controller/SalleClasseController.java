@@ -22,18 +22,18 @@ public class SalleClasseController {
 
 
 	@PutMapping({"{id}","{id}/"})
-	public void updateSalleClasse(@RequestBody SalleClasse SalleClasse, @PathVariable String code) {
+	public void updateSalleClasse(@RequestBody SalleClasse SalleClasse, @PathVariable Integer code) {
 		SalleClasse salleClasse = dao.findById(code).get();
 		dao.save(salleClasse);
 	}
 
 	@GetMapping({"{id}", "{id}/" })
-	public SalleClasse GetSalleClasseById(@PathVariable String code) {
+	public SalleClasse GetSalleClasseById(@PathVariable Integer code) {
 		return dao.findById(code).get();
 	}
 
 	@DeleteMapping("/delete/{code}")
-	public void delSalleClasse(@PathVariable String code) {
+	public void delSalleClasse(@PathVariable Integer code) {
 		dao.deleteById(code);
 	}
 

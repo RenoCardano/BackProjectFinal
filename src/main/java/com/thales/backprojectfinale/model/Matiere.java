@@ -28,8 +28,18 @@ public class Matiere {
     @NonNull
     private String nom;
 
-    @OneToMany(mappedBy = "matiere")
-    private List<Cours> coursListMatiere = new ArrayList<>();
+/*
+    @ManyToMany(mappedBy = "matièreEnseignant")
+    private List<Enseignant> enseignantMatières = new ArrayList<>();
+    */
+
+    @OneToOne(mappedBy = "matiereEnseigner")
+    private Enseignement enseignement;
+
+
+    @OneToMany(mappedBy = "matiereExcluClasse")
+    private List<SalleClasse> sallesExclues = new ArrayList<>();
+
 
 }
 

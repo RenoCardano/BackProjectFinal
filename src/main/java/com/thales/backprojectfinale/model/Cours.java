@@ -31,17 +31,19 @@ public class Cours {
     @ManyToOne(targetEntity = Classe.class)
     private Classe classe;
 
-
-    @ManyToOne(targetEntity = Cours.class)
-    private Jour jour;
-
+    /*
     @ManyToOne
     private Enseignant enseignant;
 
     @ManyToOne
     private Matiere matiere;
-
+    */
+    @ManyToOne
+    private Enseignement enseignements;
     @ManyToOne
     private SalleClasse salleClasse;
+
+    @ManyToOne
+    private Jour jourCours;
 
 }

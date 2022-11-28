@@ -21,7 +21,7 @@ public class Utilisateur {
     private String login;
     @NonNull
     private String motdepasse;
-
+    @NonNull
     @ManyToOne
     private Etablissement etablissement;
 

@@ -1,11 +1,11 @@
 package com.thales.backprojectfinale.model;
 
-import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,12 +25,12 @@ public class SalleClasse {
     @NonNull
     private int capacite;
 
-    /*
+
     @OneToMany(mappedBy="codeMat")
     private List<Matiere> matiereExclues;
 
     @OneToMany(mappedBy = "salleClasse" )
     private List<Cours> coursListSalle = new ArrayList<Cours>();
-    */
+
 
 }

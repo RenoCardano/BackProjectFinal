@@ -1,11 +1,11 @@
 package com.thales.backprojectfinale.model;
 
-import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -31,7 +31,7 @@ public class Cours {
     @ManyToOne(targetEntity = Classe.class)
     private Classe classe;
 
-    /*
+
     @ManyToOne(targetEntity = Cours.class)
     private Jour jour;
 
@@ -43,7 +43,5 @@ public class Cours {
 
     @ManyToOne
     private SalleClasse salleClasse;
-
-     */
 
 }

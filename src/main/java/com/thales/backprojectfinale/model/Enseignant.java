@@ -1,11 +1,11 @@
 package com.thales.backprojectfinale.model;
 
-import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 
+import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -26,8 +26,8 @@ public class Enseignant {
     @NonNull
     private LocalDate dateDeNaissance;
 
-    /*
+
     @OneToMany(mappedBy = "enseignant")
     private List<Cours> coursList = new ArrayList<>();
-*/
+
 }

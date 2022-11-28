@@ -1,6 +1,8 @@
 package com.thales.backprojectfinale.controller;
 
+import com.thales.backprojectfinale.dao.ICourDao;
 import com.thales.backprojectfinale.dao.IEtablissementDao;
+import com.thales.backprojectfinale.model.Cours;
 import com.thales.backprojectfinale.model.Etablissement;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -9,31 +11,30 @@ import java.util.List;
 
 
 @RestController
-@RequestMapping("/etablissement")
-public class EtablissementController {
+@RequestMapping("/cours")
+public class CourController {
 
 	@Autowired
-	private IEtablissementDao dao;
+	private ICourDao dao;
 
 	@PostMapping("")
-	public Etablissement addEtablissement(@RequestBody Etablissement etablissement) {
-		return dao.save(etablissement);
+	public Cours addCours(@RequestBody Cours cours) {
+		return dao.save(cours);
 	}
 
-
 	@PutMapping({"{id}","{id}/"})
-	public void updateEtablissement(@RequestBody Etablissement Etablissement, @PathVariable Integer id) {
-		Etablissement etablissement = dao.findById(id).get();
-		dao.save(etablissement);
+	public void updateCours(@RequestBody Cours cours, @PathVariable Integer id) {
+		Cours coursFound = dao.findById(id).get();
+		dao.save(coursFound);
 	}
 
 	@GetMapping({"{id}", "{id}/" })
-	public Etablissement GetEtablissementById(@PathVariable Integer id) {
+	public Cours getCoursById(@PathVariable Integer id) {
 		return dao.findById(id).get();
 	}
 
 	@DeleteMapping("/delete/{id}")
-	public Boolean delEtablissment(@PathVariable Integer id) {
+	public Boolean delCour(@PathVariable Integer id) {
 		try {
 			dao.deleteById(id);
 			return true;
@@ -43,7 +44,7 @@ public class EtablissementController {
 	}
 
 	@GetMapping({"", "/"})
-	public List<Etablissement> etablissement() {
+	public List<Cours> coursList() {
 		return this.dao.findAll();
 	}
 

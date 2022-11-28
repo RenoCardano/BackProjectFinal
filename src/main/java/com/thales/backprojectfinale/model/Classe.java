@@ -13,23 +13,15 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @RequiredArgsConstructor
-public class Etablissement {
+public class Classe {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idEtablissement;
+    private int idClasse;
     @NonNull
-    private String nom;
-    @NonNull
-    private String adresse;
-    @NonNull
-    private String type;
-    @NonNull
-    private int numeroTelephone;
-    @NonNull
-    private String logo;
+    private String proffeseurPrincipal;
 
-    @OneToMany(mappedBy = "etablissement")
-    private List<Utilisateur> authentificationList = new ArrayList<>();
+    @OneToMany(mappedBy = "classe")
+    private List<Cours> coursList = new ArrayList<>();
 
 }

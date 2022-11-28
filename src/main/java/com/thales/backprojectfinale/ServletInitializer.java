@@ -1,4 +1,4 @@
-package com.thales.springboot_project;
+package com.thales.backprojectfinale;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;

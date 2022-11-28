@@ -45,7 +45,6 @@ public class AuthentificationController {
 
 	@GetMapping({""})
 	public List<Utilisateur> getAllUtilisateur() {
-
 		return this.dao.findAll();
 	}
 

@@ -22,7 +22,7 @@ public class Utilisateur {
     @NonNull
     private String motdepasse;
     @NonNull
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType. MERGE)
     private Etablissement etablissement;
 
 }

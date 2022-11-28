@@ -17,19 +17,33 @@ import java.util.List;
 public class Cours {
 
     @Id
-    //exemple SVT, MATH
-    //a voir code ou Id inrementer ?
-    private String cour;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int idCours;
+
+    @NonNull
+    private String nomCour;
 
     @NonNull
     private String heure_debut;
     @NonNull
     private String heure_fin;
 
-    @ManyToOne
+    @ManyToOne(targetEntity = Classe.class)
     private Classe classe;
 
-    @ManyToOne
+    /*
+    @ManyToOne(targetEntity = Cours.class)
     private Jour jour;
+
+    @ManyToOne
+    private Enseignant enseignant;
+
+    @ManyToOne
+    private Matiere matiere;
+
+    @ManyToOne
+    private SalleClasse salleClasse;
+
+     */
 
 }

@@ -1,13 +1,14 @@
 package com.thales.backprojectfinale.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Data
@@ -16,7 +17,8 @@ import java.time.LocalDate;
 public class Enseignant {
 
     @Id
-    private String idEns;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int idEns;
 
     @NonNull
     private String nom;
@@ -24,4 +26,8 @@ public class Enseignant {
     @NonNull
     private LocalDate dateDeNaissance;
 
+    /*
+    @OneToMany(mappedBy = "enseignant")
+    private List<Cours> coursList = new ArrayList<>();
+*/
 }

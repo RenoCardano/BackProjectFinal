@@ -1,13 +1,12 @@
 package com.thales.backprojectfinale.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -17,12 +16,21 @@ import java.util.List;
 public class SalleClasse {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int idSalleClasse;
+
+    @NonNull
     private String nom;
 
     @NonNull
     private int capacite;
 
+    /*
     @OneToMany(mappedBy="codeMat")
     private List<Matiere> matiereExclues;
+
+    @OneToMany(mappedBy = "salleClasse" )
+    private List<Cours> coursListSalle = new ArrayList<Cours>();
+    */
 
 }

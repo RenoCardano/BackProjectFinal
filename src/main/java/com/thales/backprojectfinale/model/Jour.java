@@ -13,16 +13,18 @@ import java.util.List;
 @Entity
 @Data
 @NoArgsConstructor
-@RequiredArgsConstructor
+
 public class Jour {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idJour;
-    //date ou int ?
-    private Date jour;
 
+    @Enumerated(EnumType.STRING)
+    private JoursSemaine jour;
+
+    /*
     @OneToMany(mappedBy = "jour")
     private List<Cours> coursJourList = new ArrayList<Cours>();
-
+    */
 }

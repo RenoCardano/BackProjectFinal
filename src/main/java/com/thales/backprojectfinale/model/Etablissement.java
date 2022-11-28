@@ -29,7 +29,8 @@ public class Etablissement {
     @NonNull
     private String logo;
 
+    /*
     @OneToMany(mappedBy = "etablissement")
     private List<Utilisateur> authentificationList = new ArrayList<>();
-
+    */
 }

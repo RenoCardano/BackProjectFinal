@@ -1,12 +1,12 @@
 package com.thales.backprojectfinale.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -16,6 +16,10 @@ import java.util.List;
 public class Matiere {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+
+    @NonNull
     private String codeMat;
 
     @NonNull
@@ -23,4 +27,10 @@ public class Matiere {
 
     @NonNull
     private String nom;
+
+    /*
+    @OneToMany(mappedBy = "matiere")
+    private List<Cours> coursListMatiere = new ArrayList<>();
+*/
 }
+

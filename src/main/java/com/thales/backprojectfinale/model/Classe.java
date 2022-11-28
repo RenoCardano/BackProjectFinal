@@ -21,7 +21,7 @@ public class Classe {
     @NonNull
     private String proffeseurPrincipal;
 
-    @OneToMany(mappedBy = "classe")
+    @OneToMany(mappedBy = "classe", targetEntity = Cours.class)
     private List<Cours> coursList = new ArrayList<>();
 
 }

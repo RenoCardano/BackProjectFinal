@@ -1,5 +1,6 @@
 package com.thales.backprojectfinale.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
@@ -27,6 +28,7 @@ public class Enseignant {
     private LocalDate dateDeNaissance;
 
     @OneToOne(mappedBy = "enseignant", cascade = CascadeType. MERGE)
+    @JsonIgnore
     private Enseignement enseignement;
 
 

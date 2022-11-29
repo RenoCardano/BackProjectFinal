@@ -1,5 +1,6 @@
 package com.thales.backprojectfinale.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
@@ -36,9 +37,11 @@ public class Cours {
     @ManyToOne(cascade = CascadeType. MERGE)
     private Enseignement enseignement;
     @NonNull
+
     @ManyToOne(cascade = CascadeType. MERGE)
     private SalleClasse salleClasse;
     @NonNull
+
     @ManyToOne(cascade = CascadeType. MERGE)
     private Jour jourCours;
 

@@ -1,5 +1,6 @@
 package com.thales.backprojectfinale.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
@@ -25,17 +26,15 @@ public class SalleClasse {
     @NonNull
     private int capacite;
 
-    @OneToMany(mappedBy="codeMat")
-    private List<Matiere> matiereExclues;
-
     @OneToMany(mappedBy = "salleClasse" )
+    @JsonIgnore
     private List<Cours> coursListSalle = new ArrayList<Cours>();
 
-    @ManyToOne(cascade = CascadeType. MERGE)
+    @ManyToOne(cascade = CascadeType.MERGE)
+    @JsonIgnore
     private Etablissement etablissement;
 
-    @ManyToOne(cascade = CascadeType. MERGE)
+    @ManyToOne(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
     private Matiere matiereExcluClasse;
-
 
 }

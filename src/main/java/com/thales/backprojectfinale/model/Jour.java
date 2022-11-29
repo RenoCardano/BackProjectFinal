@@ -1,5 +1,6 @@
 package com.thales.backprojectfinale.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
@@ -13,7 +14,7 @@ import java.util.List;
 @Entity
 @Data
 @NoArgsConstructor
-
+@RequiredArgsConstructor
 public class Jour {
 
     @Id
@@ -21,10 +22,10 @@ public class Jour {
     private int idJour;
 
     @NonNull
-    @Enumerated(EnumType.STRING)
-    private JoursSemaine jour;
+    private String jour;
 
     @OneToMany(mappedBy = "jourCours", targetEntity = Cours.class)
+    @JsonIgnore
     private List<Cours> coursJourList = new ArrayList<Cours>();
 
 }

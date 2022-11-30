@@ -2,6 +2,7 @@ package com.thales.backprojectfinale.controller;
 
 import com.thales.backprojectfinale.dao.MatiereDao;
 import com.thales.backprojectfinale.dao.SalleClasseDao;
+import com.thales.backprojectfinale.model.Enseignant;
 import com.thales.backprojectfinale.model.Matiere;
 import com.thales.backprojectfinale.model.SalleClasse;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,8 +31,8 @@ public class MatiereController {
 	}
 
 	@GetMapping({"{id}", "{id}/" })
-	public Matiere GetMatiereById(@PathVariable Integer codeMat) {
-		return dao.findById(codeMat).get();
+	public Matiere GetEnseignantById(@PathVariable Integer id) {
+		return dao.findById(id).get();
 	}
 
 	@DeleteMapping("/delete/{code}")

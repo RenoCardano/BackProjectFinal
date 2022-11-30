@@ -20,10 +20,10 @@ public class Enseignement {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idEnseignement;
     @NonNull
-    @OneToOne(cascade = CascadeType. MERGE)
+    @ManyToOne(cascade = CascadeType. MERGE)
     private Enseignant enseignant;
     @NonNull
-    @OneToOne(cascade = CascadeType. MERGE)
+    @ManyToOne(cascade = CascadeType. MERGE)
     private Matiere matiereEnseignee;
 
 

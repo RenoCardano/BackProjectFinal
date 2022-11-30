@@ -27,9 +27,9 @@ public class Enseignant {
     @NonNull
     private LocalDate dateDeNaissance;
 
-    @OneToOne(mappedBy = "enseignant", cascade = CascadeType. MERGE)
+    @OneToMany(mappedBy = "enseignant", cascade = CascadeType. MERGE)
     @JsonIgnore
-    private Enseignement enseignement;
+    private List<Enseignement> enseignement = new ArrayList<>();
 
 
     /*

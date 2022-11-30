@@ -29,9 +29,9 @@ public class Matiere {
     @NonNull
     private String nom;
 
-    @OneToOne(mappedBy = "matiereEnseignee", cascade = CascadeType. MERGE)
+    @OneToMany(mappedBy = "matiereEnseignee", cascade = CascadeType. MERGE)
     @JsonIgnore
-    private Enseignement enseignement;
+    private List<Enseignement> enseignement = new ArrayList<>();
 
 
     @OneToMany(mappedBy = "matiereExcluClasse")

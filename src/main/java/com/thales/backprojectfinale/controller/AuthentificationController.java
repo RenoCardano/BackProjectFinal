@@ -48,4 +48,13 @@ public class AuthentificationController {
 		return this.dao.findAll();
 	}
 
+
+
+	@GetMapping("/{login}/{motdepasse}")
+	public Utilisateur  findUserByStatusAndName(@PathVariable String login, @PathVariable String motdepasse) {
+		System.out.println(login);
+		System.out.println(motdepasse);
+		return dao.findUserByStatusAndName(login, motdepasse);
+	}
+
 }

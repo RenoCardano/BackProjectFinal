@@ -1,6 +1,7 @@
 package com.thales.backprojectfinale.controller;
 
 import com.thales.backprojectfinale.dao.SalleClasseDao;
+import com.thales.backprojectfinale.model.Jour;
 import com.thales.backprojectfinale.model.SalleClasse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -40,6 +41,16 @@ public class SalleClasseController {
 	@GetMapping({"", "/"})
 	public List<SalleClasse> salleClasses() {
 		return this.dao.findAll();
+	}
+
+	@GetMapping({"/create"})
+	public void createSamplesSalleClasse(){
+		this.dao.save(new SalleClasse("100",25));
+		this.dao.save(new SalleClasse("101",30));
+		this.dao.save(new SalleClasse("102",35));
+		this.dao.save(new SalleClasse("200",20));
+		this.dao.save(new SalleClasse("201",28));
+		this.dao.save(new SalleClasse("202",32));
 	}
 
 }

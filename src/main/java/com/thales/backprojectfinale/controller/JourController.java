@@ -7,6 +7,8 @@ import com.thales.backprojectfinale.model.Jour;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -46,6 +48,16 @@ public class JourController {
 	@GetMapping({"", "/"})
 	public List<Jour> jourList() {
 		return this.dao.findAll();
+	}
+
+	@GetMapping({"/create"})
+	public void createSamplesCategorie(){
+		this.dao.save(new Jour("LUNDI"));
+		this.dao.save(new Jour("MARDI"));
+		this.dao.save(new Jour("MERCREDI"));
+		this.dao.save(new Jour("JEUDI"));
+		this.dao.save(new Jour("VENDREDI"));
+		this.dao.save(new Jour("SAMEDI"));
 	}
 
 }

@@ -14,6 +14,7 @@ import java.util.List;
 @Entity
 @Data
 @NoArgsConstructor
+@RequiredArgsConstructor
 public class Enseignement {
 
     @Id

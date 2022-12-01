@@ -3,10 +3,12 @@ package com.thales.backprojectfinale.controller;
 import com.thales.backprojectfinale.dao.IClasseDao;
 import com.thales.backprojectfinale.dao.IEtablissementDao;
 import com.thales.backprojectfinale.model.Classe;
+import com.thales.backprojectfinale.model.Enseignant;
 import com.thales.backprojectfinale.model.Etablissement;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.List;
 
 
@@ -46,6 +48,14 @@ public class ClasseController {
 	@GetMapping({"", "/"})
 	public List<Classe> classeList() {
 		return this.dao.findAll();
+	}
+
+	@GetMapping({"/create"})
+	public void createSamplesClasse(){
+		this.dao.save(new Classe("6eA"));
+		this.dao.save(new Classe("2nd1"));
+		this.dao.save(new Classe("6eB"));
+		this.dao.save(new Classe("6eC"));
 	}
 
 }

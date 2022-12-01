@@ -8,6 +8,7 @@ import com.thales.backprojectfinale.model.SalleClasse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.List;
 
 
@@ -44,5 +45,16 @@ public class MatiereController {
 	public List<Matiere> matieres() {
 		return this.dao.findAll();
 	}
+
+	@GetMapping({"/create"})
+	public void createSamplesCategorie(){
+		this.dao.save(new Matiere("S22","#123123","Maths"));
+		this.dao.save(new Matiere("S02","#AA3123","Physique"));
+		this.dao.save(new Matiere("L03","#12AA23","Francais"));
+		this.dao.save(new Matiere("L08","#1231FF","Anglais"));
+		this.dao.save(new Matiere("E34","#1231DD","Economie"));
+		this.dao.save(new Matiere("E55","#12EE23","Marketing"));
+	}
+
 
 }

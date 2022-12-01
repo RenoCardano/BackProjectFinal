@@ -30,7 +30,10 @@ public class Cours {
     private String heure_fin;
 
     @NonNull
-    @ManyToOne(cascade = CascadeType. MERGE)
+    @ManyToOne(cascade = {
+            CascadeType.PERSIST,
+            CascadeType.MERGE
+    })
     private Classe classe;
 
     @NonNull

@@ -26,7 +26,7 @@ public class Etablissement {
     private String type;
     @NonNull
     private String numeroTelephone;
-    @NonNull
+
     private String logo;
 
     /*

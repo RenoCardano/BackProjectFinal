@@ -26,11 +26,11 @@ public class SalleClasse {
     @NonNull
     private int capacite;
 
-    @OneToMany(mappedBy = "salleClasse" )
+    @OneToMany(mappedBy = "salleClasse",  cascade = CascadeType.ALL )
     @JsonIgnore
     private List<Cours> coursListSalle = new ArrayList<Cours>();
 
-    @ManyToOne(cascade = CascadeType.MERGE)
+    @ManyToOne(cascade = CascadeType.ALL)
     @JsonIgnore
     private Etablissement etablissement;
 

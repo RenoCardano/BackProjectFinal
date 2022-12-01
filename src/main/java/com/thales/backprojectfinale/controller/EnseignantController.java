@@ -35,13 +35,7 @@ public class EnseignantController {
 	}
 
 	@DeleteMapping("/delete/{id}")
-	public Boolean delEnseignant(@PathVariable Integer id) {
-		try {
-			dao.deleteById(id);
-			return true;
-		} catch (Exception e ) {
-			return false;
-		}
+	public void delClasse(@PathVariable Integer id) {dao.deleteById(id);
 	}
 
 	@GetMapping({"", "/"})

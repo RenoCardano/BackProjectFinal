@@ -27,7 +27,7 @@ public class Enseignant {
     @NonNull
     private LocalDate dateDeNaissance;
 
-    @OneToMany(mappedBy = "enseignant", cascade = CascadeType. MERGE)
+    @OneToMany(mappedBy = "enseignant", cascade = CascadeType.ALL)
     @JsonIgnore
     private List<Enseignement> enseignement = new ArrayList<>();
 

@@ -35,9 +35,9 @@ public class MatiereController {
 		return dao.findById(id).get();
 	}
 
-	@DeleteMapping("/delete/{code}")
-	public void delMatiere(@PathVariable Integer codeMat) {
-		dao.deleteById(codeMat);
+	@DeleteMapping("/delete/{id}")
+	public void delMatiere(@PathVariable Integer id) {
+		dao.deleteById(id);
 	}
 
 	@GetMapping({"", "/"})

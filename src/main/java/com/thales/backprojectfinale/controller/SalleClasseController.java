@@ -16,8 +16,8 @@ public class SalleClasseController {
 	private SalleClasseDao dao;
 
 	@PostMapping("")
-	public void addSalleClasse(@RequestBody SalleClasse salleClasse) {
-		dao.save(salleClasse);
+	public SalleClasse addSalleClasse(@RequestBody SalleClasse salleClasse) {
+		return dao.save(salleClasse);
 	}
 
 

@@ -29,15 +29,14 @@ public class Matiere {
     @NonNull
     private String nom;
 
-    @OneToMany(mappedBy = "matiereEnseignee", cascade = CascadeType. MERGE)
+    @OneToMany(mappedBy = "matiereEnseignee", cascade = CascadeType.ALL)
     @JsonIgnore
     private List<Enseignement> enseignement = new ArrayList<>();
 
 
-    @OneToMany(mappedBy = "matiereExcluClasse")
+    @OneToMany(mappedBy = "matiereExcluClasse",  cascade = CascadeType.ALL)
     @JsonIgnore
     private List<SalleClasse> sallesExclues = new ArrayList<>();
-
-
+    
 }
 

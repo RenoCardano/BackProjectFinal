@@ -23,18 +23,26 @@ public class CourController {
 	}
 
 	@PutMapping({"{id}","{id}/"})
-	public void updateCours(@RequestBody Cours cours, @PathVariable Integer id) {
+	public void updateCours(@RequestBody Cours cours, @PathVariable("id") Integer id) {
 		Cours coursFound = dao.findById(id).get();
+		coursFound.setIdCours(cours.getIdCours());
+		coursFound.setNomCour(cours.getNomCour());
+		coursFound.setHeure_debut(cours.getHeure_debut());
+		coursFound.setHeure_fin(cours.getHeure_fin());
+		coursFound.setClasse(cours.getClasse());
+		coursFound.setEnseignement(cours.getEnseignement());
+		coursFound.setSalleClasse(cours.getSalleClasse());
+		coursFound.setJourCours(cours.getJourCours());
 		dao.save(coursFound);
 	}
 
 	@GetMapping({"{id}", "{id}/" })
-	public Cours getCoursById(@PathVariable Integer id) {
+	public Cours getCoursById(@PathVariable("id") Integer id) {
 		return dao.findById(id).get();
 	}
 
 	@DeleteMapping("/delete/{id}")
-	public Boolean delCour(@PathVariable Integer id) {
+	public Boolean delCour(@PathVariable("id") Integer id) {
 		try {
 			dao.deleteById(id);
 			return true;
